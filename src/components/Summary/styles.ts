@@ -25,5 +25,10 @@ export const Container = styled.div`
       font-weight: 500;
       line-height: 3rem;
     }
+
+    &.total {
+      background-color: var(--green);
+      color: #FFF;
+    }
   }
 `;
