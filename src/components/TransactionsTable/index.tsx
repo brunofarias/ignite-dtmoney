@@ -1,11 +1,11 @@
 import { useEffect } from "react";
+import { api } from "../../services/api";
 import { Container } from "./style";
 
 export function TransactionsTable() {
   useEffect(() => {
-    fetch('http://localhost:3000/api/transactions')
-    .then(response => response.json())
-    .then(data => console.log(data))
+    api.get('transactions')
+      .then(response => console.log(response.data))
   }, []);
   return (
     <Container>
@@ -30,7 +30,7 @@ export function TransactionsTable() {
             <td className="withdraw">- R$ 1.100</td>
             <td>Casa</td>
             <td>17/02/2021</td>
-          </tr>   
+          </tr>
         </tbody>
       </table>
     </Container>
