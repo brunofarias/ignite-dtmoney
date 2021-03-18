@@ -26,7 +26,7 @@ export const Container = styled.form`
     }
   }
 
-  button {
+  button[type="submit"] {
     width: 100%;
     height: 4rem;
     margin-top: 1.5rem;
@@ -50,31 +50,34 @@ export const TransactionTypeContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
   margin: 1rem 0;
+`;
 
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 4rem;
-    border: 1px solid #d7d7d7;
-    background-color: transparent;
-    transition: border-color 0.2s;
+interface RadioBoxPorps {
+  isActive: boolean;
+}
 
-    img {
-      width: 20px;
-      height: 20px;
-    }
+export const RadioBox = styled.button<RadioBoxPorps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4rem;
+  border: 1px solid #d7d7d7;
+  background-color: ${props => props.isActive ? '#ccc' : 'transparent'};
+  transition: border-color 0.2s;
 
-    span {
-      display: inline-block;
-      margin-left: 1rem;
-      font-size: 1rem;
-      color: var(--text-title);
-    }
+  img {
+    width: 20px;
+    height: 20px;
+  }
 
-    &:hover {
-      border-color: ${darken(0.1, '#d7d7d7')};
-    }
-  } 
+  span {
+    display: inline-block;
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: var(--text-title);
+  }
 
+  &:hover {
+    border-color: ${darken(0.1, '#d7d7d7')};
+  }
 `;
